@@ -1,13 +1,15 @@
 import express from 'express';
 import { locationsAPIrouter } from './locations/locations.js';
+import { registerAPIrouter } from './register/register.js';
 
 export const apiRouter = express.Router();
 
 apiRouter.use('/locations', locationsAPIrouter);
+apiRouter.use('/register', registerAPIrouter);
 
 apiRouter.all('/', (req, res) => {
     return res.json({
-        status: 'Error',
-        msg: 'Isssirink konkretu API endpointa',
+        status: 'error',
+        msg: 'Issirink konkretu API endpointa',
     });
 });

@@ -11,16 +11,23 @@ const corsOptions = {
 const helmetOptions = {
     crossOriginResourcePolicy: false,
 };
+
 const app = express();
+
+app.use(express.json({
+    type: 'application/json',
+}));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors(corsOptions));
 app.use(helmet(helmetOptions));
+
 app.use('/api', apiRouter);
 
 app.all('*', (req, res) => {
     return res.json({
         status: 'error',
-        msg: 'Ne ten pataikei',
+        msg: 'Ne ten pataikei :P',
     });
 });
 

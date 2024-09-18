@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
 import { LocationCard } from "../components/locations/LocationCard";
@@ -7,7 +7,7 @@ export function LocationListing() {
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5173/locations')
+        fetch('http://localhost:5020/api/locations')
             .then(res => res.json())
             .then(obj => {
                 if (typeof obj !== 'object') {
@@ -17,7 +17,7 @@ export function LocationListing() {
                 }
             })
             .catch(err => {
-                console.error(err);
+                console.log(err);
             });
     }, []);
 

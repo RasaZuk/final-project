@@ -2,12 +2,13 @@ import img1 from '../assets/locations/1.jpg';
 import img2 from '../assets/locations/2.jpg';
 import img3 from '../assets/locations/3.jpg';
 
+// iskelti i DB
 export const locationsData = [
     {
         img: img1,
         name: 'Menulis',
         address: {
-            country: 'Kosmosas',
+            country: 'Kostmosas',
             city: 'A',
             street: 'A',
             number: 'A',
@@ -27,9 +28,9 @@ export const locationsData = [
     },
     {
         img: img3,
-        name: '',
+        name: 'Meduza',
         address: {
-            country: 'Jura',
+            country: 'Baltijos jura',
             city: 'C',
             street: 'C',
             number: 'C',
